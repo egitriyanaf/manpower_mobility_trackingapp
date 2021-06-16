@@ -35,16 +35,11 @@
 <!-- main -->
 <div class="w3layouts-main"> 
 	<div class="bg-layer">
-		<center>
-
-			<img src="{{asset('login-template/ADF-Logo.png')}}" alt="Logo ADF" width="200" height="100">
-		</center>
-		
-		
+		<br>
+		<br>
 		<div class="header-main">
 			<div class="main-icon">
-				<img src="{{asset('assets/dist/img/manpowertrackingapp.png')}}" alt="Logo Manpower" width="200" height="120">
-			</div>
+				<img src="{{asset('login-template/ADF-Logo.png')}}" alt="Logo ADF" width="200" height="100"></div>
 			<div class="header-left-bottom">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -71,14 +66,6 @@
 					</div>
 					<div class="bottom">
 						<button class="btn">Log In</button>
-					</div>
-					<div class="links">
-						<p>
-                            @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}">Forgot Password?</a>
-                            @endif
-                        </p>
-						<div class="clear"></div>
 					</div>
 				</form>	
 			</div>
