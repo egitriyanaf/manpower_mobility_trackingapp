@@ -23,6 +23,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
+            
             <!-- AREA CHART -->
             <div class="card card-primary" style="display: none;">
               <div class="card-header">
@@ -168,4 +169,13 @@
     </section>
     <!-- /.content -->
   </div>
+
+  @push('scripts')
+  {{-- <script>
+    const chart = new Chartisan({
+      el: '#chart',
+      url: "@chart('sample_chart')",
+    });
+  </script> --}}
+  @endpush
 @endsection

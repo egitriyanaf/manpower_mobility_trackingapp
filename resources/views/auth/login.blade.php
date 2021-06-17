@@ -41,7 +41,6 @@
 			<div class="main-icon">
 				
 			<img src="{{asset('login-template/mptrack.png')}}" alt="Man Power Tracking App">
-				{{-- <img src="{{asset('login-template/ADF-Logo.png')}}" alt="Logo ADF" width="200" height="100"> --}}
 			</div>
 			<div class="header-left-bottom">
                 <form method="POST" action="{{ route('login') }}">

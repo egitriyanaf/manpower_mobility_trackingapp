@@ -33,8 +33,9 @@ Route::prefix('/transaction_tracking')->group(function(){
     Route::get('json',[App\Http\Controllers\TransactionController::class,'datajson_transaction_tracking'])->name('json_transaction_tracking');
 });
 
-Route::get('/dashboard',[App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
-    
+Route::prefix('/dashboard')->group(function(){
+    Route::get('',[App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
+});
 
 
 
