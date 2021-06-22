@@ -20,81 +20,6 @@
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- User table box -->
-      <div class="card">
-        <div class="card-header">
-          
-          <button style="margin-left: 30px" type="button" class="btn btn-primary" title="Add Data" data-toggle="modal" data-target="#addUserForm"> Add New User
-            <i class="fas fa-plus"></i>
-          </button>
-
-          {{-- modal add user --}}
-          <div class="modal fade" id="addUserForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header border-bottom-0">
-                  <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form method="POST" action="{{route('create_user')}}" enctype="multipart/form-data">
-                  @csrf
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email address</label>
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                    </div>
-                  </div>
-                  <div class="modal-footer border-top-0 d-flex justify-content-right">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-
-          <h3 class="card-title">Master User Table</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <table id="table_user" class="table table-striped table-bordered" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-          </table>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-
       {{-- master supervisor box --}}
       <div class="card">
         <div class="card-header">
@@ -113,12 +38,14 @@
           <table id="table_supervisor" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>NIK</th>
-                    <th>Fullname</th>
-                    <th>Cost Center</th>
-                    <th>Location</th>
-                    <th>Created Date</th>
-                    <th>Company</th>
+                  <th>No.</th>
+                  <th>Nik Spv</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Cost Center</th>
+                  <th>Post Name</th>
+                  <th>Jobtitle Code</th>
+                  <th>Company</th>
                 </tr>
             </thead>
             <tbody>
@@ -150,9 +77,10 @@
                     <th>No.</th>
                     <th>Nik</th>
                     <th>Name</th>
-                    <th>Job Title</th>
+                    <th>Gender</th>
                     <th>Cost Center</th>
-                    <th>Location</th>
+                    <th>Post Name</th>
+                    <th>Jobtitle Code</th>
                     <th>Company</th>
                 </tr>
             </thead>
@@ -169,27 +97,7 @@
   </div>
 
   @push('scripts')
-  <script type="text/javascript">
-    $( function () {
-      var table_user = $('#table_user').DataTable({
-        "scrollY": 200,
-        "scrollX": true,
-        paging: true,
-		    processing: true,
-		    serverSide: true,
-        ajax: '{{ route('json_master_user') }}',
-        columns: [
-          {"data": "id",
-          render: function (data, type, row, meta) {
-              return meta.row + meta.settings._iDisplayStart + 1;
-          }},
-          { data: 'name', name: 'name' },
-          { data: 'email', name: 'email' },
-          { data: 'action', name: 'action'}
-        ]
-      });
-  } );
-</script>
+  
 
 <script type="text/javascript">
   $( function () {
@@ -201,12 +109,17 @@
       serverSide: true,
       ajax: '{{route('json_master_spv')}}',
       columns: [
-        {data:'nik_spv',name:'nik'},
-        { data: 'fullname_spv', name: 'name' },
-        { data: 'cost_center', name: 'cost_center' },
-        { data: 'location', name: 'location' },
-        { data: 'created_at', name: 'created_at' },
-        { data: 'company', name: 'company' },
+        {"data": "id",
+          render: function (data, type, row, meta) {
+              return meta.row + meta.settings._iDisplayStart + 1;
+          }},
+          { data: 'nik_spv', name: 'nik_spv' },
+          { data: 'fullname_spv', name: 'fullname_spv' },
+          { data: 'gender', name: 'gender' },
+          { data: 'cost_center', name: 'cost_center' },
+          { data: 'post_name', name: 'post_name' },
+          { data: 'jobtitle_code', name: 'jobtitle_code' },
+          { data: 'company', name: 'company' },
       ]
     });
 } );
@@ -228,9 +141,10 @@
           }},
           { data: 'nik', name: 'nik' },
           { data: 'fullname_emp', name: 'fullname_emp' },
-          { data: 'job_title', name: 'job_title' },
+          { data: 'gender', name: 'gender' },
           { data: 'cost_center', name: 'cost_center' },
-          { data: 'location', name: 'location' },
+          { data: 'post_name', name: 'post_name' },
+          { data: 'jobtitle_code', name: 'jobtitle_code' },
           { data: 'company', name: 'company' },
       ]
     });

@@ -55,17 +55,17 @@ return [
             ]) : [],
         ],
 
-        // 'sqlsrv' => [
-        //     'driver' => 'sqlsrv',
-        //     'host' => env('DB_HOST_2', 'localhost'),
-        //     'port' => env('DB_PORT_2', '1433'),
-        //     'database' => env('DB_DATABASE_2', 'forge'),
-        //     'username' => env('DB_USERNAME_2', 'forge'),
-        //     'password' => env('DB_PASSWORD_2', ''),
-        //     'charset' => 'utf8',
-        //     'prefix' => '',
-        //     'prefix_indexes' => true,
-        // ],
+        'sqlsrv' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST_sqlsrv', 'localhost'),
+            'port' => env('DB_PORT_sqlsrv', '1433'),
+            'database' => env('DB_DATABASE_sqlsrv', 'forge'),
+            'username' => env('DB_USERNAME_sqlsrv', 'forge'),
+            'password' => env('DB_PASSWORD_sqlsrv', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
 
     ],
 

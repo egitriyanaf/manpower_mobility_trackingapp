@@ -104,7 +104,7 @@
           <li class="nav-item">
             {{-- <a href="http://10.1.1.88:3000/public/dashboard/5daac007-a53a-43d2-b3c7-3b9175f05501" target="_blank" class="nav-link"> --}}
               
-            <a href="{{route('dashboard')}}" class="nav-link {{(request()->is('dashboard')) ? 'active' : ''}}">
+            <a href="http://10.1.1.88:3000/public/dashboard/5daac007-a53a-43d2-b3c7-3b9175f05501?start_time_filter=past30days&end_time_filter=past30days" target="_blank" class="nav-link {{(request()->is('dashboard')) ? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -113,19 +113,28 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
-              <i class="nav-icon fas fa-calendar-check"></i>
+            <a href="{{route('user')}}" class="nav-link {{ (request()->is('user')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-user"></i>
               <p>
-                Mobility Tracking
+                Management User
                 </p>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a href="{{route('table')}}" class="nav-link {{ (request()->is('table')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Master Data
+                </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
+              <i class="nav-icon fas fa-calendar-check"></i>
+              <p>
+                Mobility Tracking
                 </p>
             </a>
           </li>

@@ -16,9 +16,10 @@ class Master_spv extends Model
     protected $fillable=[
                         'nik_spv',
                         'fullname_spv',
+                        'gender',
                         'cost_center',
-                        'location',
-                        'created_at',
+                        'post_name',
+                        'jobtitle_code',
                         'company'
                         ];
 }

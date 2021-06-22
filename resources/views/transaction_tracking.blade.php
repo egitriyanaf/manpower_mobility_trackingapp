@@ -41,7 +41,6 @@
                               <th>Nik Spv</th>
                               <th>Nik Emp</th>
                               <th>Cost Center</th>
-                              <th>Location</th>
                               <th>Company</th>
                               <th>Date Time Check In</th>
                               <th>Date Time Check Out</th>
@@ -73,7 +72,6 @@
               { data: 'nik_spv', name: 'nik_spv' },
               { data: 'nik_emp', name: 'nik_emp' },
               {data:'cost_center', name:'cost_center'},
-              {data:'location',name:'location'},
               {data:'company',name:'company'},
               { data: 'datetime_checkin', name: 'date_checkin' },
               { data: 'datetime_checkout', name: 'date_checkout' },

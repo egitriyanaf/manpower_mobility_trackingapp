@@ -15,7 +15,6 @@ class Transaction_tracking extends Model
                         'nik_spv',
                         'nik_emp',
                         'cost_center',
-                        'location',
                         'company',
                         'datetime_checkin',
                         'datetime_checkout'
