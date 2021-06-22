@@ -38,15 +38,13 @@
                       <thead>
                           <tr>
                               <th>No</th>
-                              <th>Serialnumber Spv</th>
-                              <th>Serialnumber Emp</th>
-                              <th>Date Check In</th>
-                              <th>Time Check In</th>
-                              <th>Date Check Out</th>
-                              <th>Time Check OUt</th>
+                              <th>Nik Spv</th>
+                              <th>Nik Emp</th>
                               <th>Cost Center</th>
                               <th>Location</th>
                               <th>Company</th>
+                              <th>Date Time Check In</th>
+                              <th>Date Time Check Out</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -72,15 +70,13 @@
               render: function (data, type, row, meta) {
                   return meta.row + meta.settings._iDisplayStart + 1;
               }},
-              { data: 'serialnumber_spv', name: 'serialnumber_spv' },
-              { data: 'serialnumber_emp', name: 'serialnumber_emp' },
-              { data: 'date_checkin', name: 'date_checkin' },
-              { data: 'time_checkin', name: 'time_checkin' },
-              { data: 'date_checkout', name: 'date_checkout' },
-              { data: 'time_checkout', name: 'time_checkout' },
+              { data: 'nik_spv', name: 'nik_spv' },
+              { data: 'nik_emp', name: 'nik_emp' },
               {data:'cost_center', name:'cost_center'},
               {data:'location',name:'location'},
-              {data:'company',name:'company'}
+              {data:'company',name:'company'},
+              { data: 'datetime_checkin', name: 'date_checkin' },
+              { data: 'datetime_checkout', name: 'date_checkout' },
             ]
           });
       } );

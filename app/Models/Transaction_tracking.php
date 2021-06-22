@@ -10,15 +10,14 @@ class Transaction_tracking extends Model
     use HasFactory;
 
     protected $table = 'transaction_trackings';
+    protected $primarykey= 'id';
     protected $fillable=[
-                        'serialnumber_spv',
-                        'serialnumber_emp',
-                        'date_checkin',
-                        'time_checkin',
-                        'date_checkout',
-                        'time_checkout',
+                        'nik_spv',
+                        'nik_emp',
                         'cost_center',
                         'location',
-                        'company'
+                        'company',
+                        'datetime_checkin',
+                        'datetime_checkout'
                         ];
 }

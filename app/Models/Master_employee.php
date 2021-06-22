@@ -7,19 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Master_employee extends Model
 {
-    use HasFactory;
 
-    protected $table = 'master_employees';
-    protected $primarykey = 'serialnumber_emp';
+    protected $table='master_employees';
+    protected $primarykey='nik';
+    protected $keytype='string';
     public $incrementing = 'false';
     protected $fillable=[
-                        'serialnumber_emp',
-                        'nik_emp',
-                        'fullname_emp',
-                        'cost_center',
-                        'location',
-                        'created_at',
-                        'created_by',
-                        'company'
-                        ];
+        'fullname_emp',
+        'job_title',
+        'cost_center',
+        'location',
+        'company'
+    ];
+
 }

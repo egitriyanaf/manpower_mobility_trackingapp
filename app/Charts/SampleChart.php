@@ -8,13 +8,22 @@ use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 
-class UserChart extends BaseChart
+class SampleChart extends BaseChart
 {
     /**
      * Handles the HTTP request for the given chart.
      * It must always return an instance of Chartisan
      * and never a string or an array.
      */
+
+    public ? string $name='custom_chart_name';
+
+    public ?string $routeName = 'chart_route_name';
+
+    public ?string $prefix = 'some_prefix';
+
+    public ?array $middlewares = ['auth'];
+    
     public function handler(Request $request): Chartisan
     {
         return Chartisan::build()
