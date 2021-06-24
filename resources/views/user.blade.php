@@ -65,7 +65,7 @@
           </div>
 
 
-          <h3 class="card-title">Master User Table</h3>
+          <h3 class="card-title">User Table</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">

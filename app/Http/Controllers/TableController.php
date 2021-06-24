@@ -20,6 +20,7 @@ class TableController extends Controller
     }
 
     public function datajson_master_emp(){
+        
         return DataTables::of(Master_employee::all())->make(true);
     }
 }

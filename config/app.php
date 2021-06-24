@@ -178,6 +178,9 @@ return [
         // yajra datatable
         Yajra\DataTables\DataTablesServiceProvider::class,
 
+        //sweetallert
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
     ],
 
     /*
@@ -233,6 +236,9 @@ return [
 
         // yajra datatable
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+        //sweetalert
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

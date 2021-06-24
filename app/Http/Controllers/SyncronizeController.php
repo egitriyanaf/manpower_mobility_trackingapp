@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Master_EmployeeSunfish;
+use App\Models\Master_SpvSunfish;
+use App\Models\Master_employee;
+use App\Models\Master_spv;
+use Illuminate\Support\Facades\DB;
+use Alert;
+
+class SyncronizeController extends Controller
+{
+    public function syncEmployee(){
+             // Connect to live database
+     $sunfish = DB::connection('sqlsrv');
+     // Get table data from production
+     foreach($sunfish->table('manpower_employee')->get() as $data){
+        // Save data to staging database - default db connection
+        $masterEmployee = Master_Employee::firstOrCreate((array) $data);
+
+      }
+      return redirect()->back();
+     
+    }
+    
+    public function syncSupervisor(){
+             // Connect to live database
+     $sunfish = DB::connection('sqlsrv');
+     // Get table data from production
+     foreach($sunfish->table('Manpower_SUPERVISOR')->get() as $data){
+        // Save data to staging database - default db connection
+        $masterEmployee = Master_spv::firstOrCreate((array) $data);  
+      }
+      return redirect()->back();
+     
+    }
+}

@@ -40,5 +40,10 @@ Route::prefix('/transaction_tracking')->group(function(){
 
 Route::get('/dashboard',[App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
 
+Route::prefix('/sync')->group(function(){
+    Route::get('/employeeData',[App\Http\Controllers\SyncronizeController::class,'syncEmployee'])->name('syncemployee');
+    Route::get('/supervisorData',[App\Http\Controllers\SyncronizeController::class,'syncSupervisor'])->name('syncsupervisor');
+});
+
 
 

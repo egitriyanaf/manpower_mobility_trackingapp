@@ -8,21 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Master_employee extends Model
 {
 
-    // protected $connection="sqlsrv";
-    // protected $table="VIEW_EMPLOYEE";
-    // protected $primarykey="emp_id";
-
     protected $table='master_employees';
-    protected $primarykey='nik';
-    protected $keytype='string';
-    public $incrementing = 'false';
+    protected $primarykey='emp_no';
     protected $fillable=[
-        'fullname_emp',
+        'emp_no',
+        'full_name',
         'gender',
         'cost_code',
-        'post_name',
+        'pos_name_en',
         'jobtitle_code',
-        'company'
+        'company_id',
+        'updated_at',
+        'created_at',
     ];
 
 }

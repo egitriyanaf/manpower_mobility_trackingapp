@@ -26,6 +26,9 @@
           <h3 class="card-title">Master Supervisor Table</h3>
 
           <div class="card-tools">
+            <a href="{{route('syncsupervisor')}}" id="syncronize_supervisor" class="btn btn-info" title="Syncronize">
+              <i class="fas fa-sync"> Syncronize Data</i>
+            </a>
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
             </button>
@@ -43,7 +46,7 @@
                   <th>Name</th>
                   <th>Gender</th>
                   <th>Cost Center</th>
-                  <th>Post Name</th>
+                  <th>Pos Name</th>
                   <th>Jobtitle Code</th>
                   <th>Company</th>
                 </tr>
@@ -62,6 +65,9 @@
           <h3 class="card-title">Master Employee Table</h3>
 
           <div class="card-tools">
+            <a href="{{route('syncemployee')}}" id="syncronize_employee" class="btn btn-info"  title="Syncronize">
+              <i class="fas fa-sync"> Syncronize Data</i>
+            </a>
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
             </button>
@@ -75,11 +81,11 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nik</th>
+                    <th>Nik Emp</th>
                     <th>Name</th>
                     <th>Gender</th>
                     <th>Cost Center</th>
-                    <th>Post Name</th>
+                    <th>Pos Name</th>
                     <th>Jobtitle Code</th>
                     <th>Company</th>
                 </tr>
@@ -113,13 +119,13 @@
           render: function (data, type, row, meta) {
               return meta.row + meta.settings._iDisplayStart + 1;
           }},
-          { data: 'nik_spv', name: 'nik_spv' },
-          { data: 'fullname_spv', name: 'fullname_spv' },
+          { data: 'emp_no', name: 'emp_no' },
+          { data: 'full_name', name: 'full_name' },
           { data: 'gender', name: 'gender' },
-          { data: 'cost_center', name: 'cost_center' },
-          { data: 'post_name', name: 'post_name' },
+          { data: 'cost_code', name: 'cost_code' },
+          { data: 'pos_name_en', name: 'pos_name_en' },
           { data: 'jobtitle_code', name: 'jobtitle_code' },
-          { data: 'company', name: 'company' },
+          { data: 'company_id', name: 'company_id' },
       ]
     });
 } );
@@ -139,13 +145,13 @@
           render: function (data, type, row, meta) {
               return meta.row + meta.settings._iDisplayStart + 1;
           }},
-          { data: 'nik', name: 'nik' },
-          { data: 'fullname_emp', name: 'fullname_emp' },
+          { data: 'emp_no', name: 'emp_no' },
+          { data: 'full_name', name: 'full_name' },
           { data: 'gender', name: 'gender' },
-          { data: 'cost_center', name: 'cost_center' },
-          { data: 'post_name', name: 'post_name' },
+          { data: 'cost_code', name: 'cost_code' },
+          { data: 'pos_name_en', name: 'pos_name_en' },
           { data: 'jobtitle_code', name: 'jobtitle_code' },
-          { data: 'company', name: 'company' },
+          { data: 'company_id', name: 'company_id' },
       ]
     });
 } );

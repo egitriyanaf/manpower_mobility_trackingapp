@@ -7,19 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Master_spv extends Model
 {
-    use HasFactory;
 
     protected $table = 'master_spvs';
-    protected $primarykey = 'nik_spv';
-    protected $keyType = 'string';
-    public $incrementing = 'false';
+    protected $primarykey = 'emp_no';
     protected $fillable=[
-                        'nik_spv',
-                        'fullname_spv',
+                        'emp_no',
+                        'full_name',
                         'gender',
-                        'cost_center',
-                        'post_name',
+                        'cost_code',
+                        'pos_name_en',
                         'jobtitle_code',
-                        'company'
+                        'company_id',
+                        'updated_at',
+                        'created_at',
                         ];
 }

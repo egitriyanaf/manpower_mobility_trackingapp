@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>adisdimensionfootwear</title>
 
+  <!--sweetalert-->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
+
   <!--favicon-->
   <link rel="shortcut icon" href="{{ asset('assets/dist/img/adflogo.png') }}">
   <!-- Google Font: Source Sans Pro -->
@@ -189,9 +193,11 @@
 <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
 <!-- Chartisan -->
 <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
-
+<!--sweetalert-->
+@include('sweet::alert')
 <!--script custom-->
 @stack('scripts')
+
 
 </body>
 </html>
