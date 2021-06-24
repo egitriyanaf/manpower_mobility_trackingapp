@@ -16,11 +16,12 @@ class SyncronizeController extends Controller
              // Connect to live database
      $sunfish = DB::connection('sqlsrv');
      // Get table data from production
-     foreach($sunfish->table('manpower_employee')->get() as $data){
+     foreach($sunfish->table('manpower_EMPLOYEE')->get() as $data){
         // Save data to staging database - default db connection
-        $masterEmployee = Master_Employee::firstOrCreate((array) $data);
+        $masterEmployee = Master_employee::firstOrCreate((array) $data);
 
       }
+      alert()->success('Syncronized Success!', 'Thank You');
       return redirect()->back();
      
     }
@@ -31,8 +32,9 @@ class SyncronizeController extends Controller
      // Get table data from production
      foreach($sunfish->table('Manpower_SUPERVISOR')->get() as $data){
         // Save data to staging database - default db connection
-        $masterEmployee = Master_spv::firstOrCreate((array) $data);  
+        $masterSupervisor = Master_spv::firstOrCreate((array) $data);  
       }
+      alert()->success('Syncronized Success!', 'Thank You');
       return redirect()->back();
      
     }

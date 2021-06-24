@@ -35,10 +35,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
 
+    <link rel="stylesheet" href="{{asset('loader.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini">
+  <div id="loader"></div>
 <!-- Site wrapper -->
-<div class="wrapper">
+<div id="content" class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -198,6 +201,20 @@
 <!--script custom-->
 @stack('scripts')
 
+<script type="text/javascript">
+  document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('loader').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },1000);
+  }
+}
+</script>
 
 </body>
 </html>
