@@ -8,7 +8,7 @@
    <!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Error Page</title>
+	<title>adisdimensionfootwear</title>
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
@@ -39,8 +39,8 @@
    <header class="main-header">
    	<div class="row">
    		<div class="logo">
-	         <img src="{{asset('assets/dist/img/ADF-Logo.png')}}" width="250" height="200" alt="Logo ADF">
-	      </div>   		
+	         <img src="{{asset('assets/dist/img/ADF-Logo.png')}}" width="200" height="200" alt="Logo ADF">
+	    </div>   		
    	</div>   
 
    	
