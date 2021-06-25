@@ -13,6 +13,7 @@ use Alert;
 class SyncronizeController extends Controller
 {
     public function syncEmployee(){
+      Master_employee::truncate();
              // Connect to live database
      $sunfish = DB::connection('sqlsrv');
      // Get table data from production
@@ -27,6 +28,7 @@ class SyncronizeController extends Controller
     }
     
     public function syncSupervisor(){
+      Master_spv::truncate();
              // Connect to live database
      $sunfish = DB::connection('sqlsrv');
      // Get table data from production

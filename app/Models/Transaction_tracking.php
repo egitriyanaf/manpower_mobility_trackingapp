@@ -17,6 +17,8 @@ class Transaction_tracking extends Model
                         'cost_center',
                         'company',
                         'datetime_checkin',
-                        'datetime_checkout'
+                        'datetime_checkout',
+                        'updated_at',
+                        'created_at',
                         ];
 }
