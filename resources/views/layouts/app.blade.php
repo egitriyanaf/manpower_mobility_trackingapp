@@ -41,7 +41,7 @@
 <body class="hold-transition sidebar-mini">
   <div id="loader"></div>
 <!-- Site wrapper -->
-<div id="content" class="wrapper">
+<div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -165,7 +165,10 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+<div id="content">
+
   @yield('body')
+</div>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
