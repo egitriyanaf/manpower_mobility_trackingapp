@@ -24,7 +24,7 @@ class UserController extends Controller
             'email'=>$request->email,
             'password'=>Hash::make($request['password']),
         ]);
-
+        alert()->success('Create User Success!', 'Thank You');
         return redirect('user');
     }
 }

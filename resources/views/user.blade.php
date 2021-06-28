@@ -86,7 +86,6 @@
                 </tr>
             </thead>
             <tbody>
-                
             </tbody>
           </table>
         </div>
@@ -115,11 +114,7 @@
           }},
           { data: 'name', name: 'name' },
           { data: 'email', name: 'email' },
-          // {
-          //       "mData": null,
-          //       "bSortable": false,
-          //      "mRender": function (o) { return '<a class="btn btn-primary btn-sm" href="{{ url('/user/edit_user/id') }}"><i class="fas fa-pen"></i></a>'; }
-          //   },
+
           // {
           //       "mData": null,
           //       "bSortable": false,

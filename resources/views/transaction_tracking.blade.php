@@ -38,12 +38,17 @@
                       <thead>
                           <tr>
                               <th>No</th>
-                              <th>Nik Spv</th>
                               <th>Nik Emp</th>
+                              <th>Nik Spv</th>
                               <th>Cost Center</th>
                               <th>Company</th>
-                              <th>Date Time Check In</th>
-                              <th>Date Time Check Out</th>
+                              <th>Shift</th>
+                              <th>Start Shift</th>
+                              <th>End Shift</th>
+                              <th>Date Check In</th>
+                              <th>Time Check In</th>
+                              <th>Date Check Out</th>
+                              <th>Time Check Out</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -73,8 +78,13 @@
               { data: 'nik_emp', name: 'nik_emp' },
               {data:'cost_center', name:'cost_center'},
               {data:'company',name:'company'},
-              { data: 'datetime_checkin', name: 'date_checkin' },
-              { data: 'datetime_checkout', name: 'date_checkout' },
+              {data:'shift',name:'shift'},
+              {data:'start_shift',name:'start_shift'},
+              {data:'end_shift',name:'end_shift'},
+              { data: 'date_checkin', name: 'date_checkin' },
+              { data: 'time_checkin', name: 'time_checkin' },
+              { data: 'date_checkout', name: 'date_checkout' },
+              { data: 'time_checkout', name: 'time_checkout' },
             ]
           });
       } );
