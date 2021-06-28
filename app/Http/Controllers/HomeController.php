@@ -23,7 +23,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   alert()->message('Login Success!', 'Welcome');
+    {   alert()->success('Login Success!', 'Welcome!');
         return view('user');
     }
 }
