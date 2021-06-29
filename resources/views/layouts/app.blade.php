@@ -129,10 +129,19 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('table')}}" class="nav-link {{ (request()->is('table')) ? 'active' : '' }}">
+            <a href="{{route('employee')}}" class="nav-link {{ (request()->is('employee')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Master Data
+                Master Employee
+                </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('teamleader')}}" class="nav-link {{ (request()->is('teamleader')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Master Teamleader
                 </p>
             </a>
           </li>
@@ -165,10 +174,10 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-<div id="content">
-
+<div id="contents">
   @yield('body')
 </div>
+
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Master_spv extends Model
+class Master_teamleader extends Model
 {
 
     protected $table = 'master_spvs';

@@ -29,10 +29,15 @@ Route::group(['middleware'=>['auth']],function(){
         Route::post('/create_user',[App\Http\Controllers\UserController::class, 'create_user'])->name('create_user');
     });
 
-    Route::prefix('/table')->group(function(){
-        Route::get('', [App\Http\Controllers\TableController::class, 'index'])->name('table');
-        Route::get('/master_spv/json', [App\Http\Controllers\TableController::class, 'datajson_master_spv'])->name('json_master_spv');
-        Route::get('/master_emp/json', [App\Http\Controllers\TableController::class, 'datajson_master_emp'])->name('json_master_emp');
+
+    Route::prefix('/employee')->group(function(){
+        Route::get('',[App\Http\Controllers\EmployeeController::class, 'index'])->name('employee');
+        Route::get('/master_emp/json',[App\Http\Controllers\EmployeeController::class, 'datajson_master_emp'])->name('json_master_emp');
+    });
+
+    Route::prefix('/teamleader')->group(function(){
+        Route::get('',[App\Http\Controllers\TeamleaderController::class,'index'])->name('teamleader');
+        Route::get('/master_tl/json',[App\Http\Controllers\TeamleaderController::class,'datajson_master_tl'])->name('json_master_teamleader');
     });
 
     Route::prefix('/transaction_tracking')->group(function(){
@@ -44,7 +49,7 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::prefix('/sync')->group(function(){
         Route::get('/employeeData',[App\Http\Controllers\SyncronizeController::class,'syncEmployee'])->name('syncemployee');
-        Route::get('/supervisorData',[App\Http\Controllers\SyncronizeController::class,'syncSupervisor'])->name('syncsupervisor');
+        Route::get('/supervisorData',[App\Http\Controllers\SyncronizeController::class,'syncTeamleader'])->name('syncteamleader');
     });
 });
 
