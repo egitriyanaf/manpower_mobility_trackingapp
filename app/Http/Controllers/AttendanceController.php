@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DataTables;
 use Illuminate\Support\Facades\DB;
+use App\Models\AttendanceSunfish;
 use App\Models\Attendance;
 
 class AttendanceController extends Controller
@@ -13,7 +14,7 @@ class AttendanceController extends Controller
         return view('attendance');
     }
 
-    public function json_attendance(){
-        //
+    public function datajson_attendance(){
+        return DataTables::of(Attendance::all())->make(true);
     }
 }

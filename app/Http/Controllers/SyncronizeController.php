@@ -7,6 +7,8 @@ use App\Models\Master_EmployeeSunfish;
 use App\Models\Master_SpvSunfish;
 use App\Models\Master_employee;
 use App\Models\Master_Teamleader;
+use App\Models\AttendanceSunfish;
+use App\Models\Attendance;
 use Illuminate\Support\Facades\DB;
 use Alert;
 
@@ -41,5 +43,16 @@ class SyncronizeController extends Controller
       alert()->success('Syncronized Success!', 'Thank You');
       return redirect()->back();
      
+    }
+
+    public function syncAttendance(){
+      $sunfish = DB::connection('sqlsrv');
+      //Get table data from production
+      foreach($sunfish->table('Manpowerapp_attendance')->get() as $data){
+        //save data to staging database - default db connection
+        $attendance=Attendance::firstOrCreate((array)$data);
+      }
+      alert()->success('Syncronized Success!', 'Thank You');
+      return redirect()->back();
     }
 }

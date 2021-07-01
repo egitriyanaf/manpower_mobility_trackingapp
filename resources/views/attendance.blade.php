@@ -42,10 +42,17 @@
                     <th>No.</th>
                     <th>Nik Emp</th>
                     <th>Name</th>
+                    <th>Jobtitle</th>
                     <th>Gender</th>
+                    <th>Attend Code</th>
+                    <th>Shift Start</th>
+                    <th>Shift End</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Actual Work Minute</th>
+                    <th>Actual Work Hour</th>
                     <th>Cost Center</th>
                     <th>Pos Name</th>
-                    <th>Jobtitle Code</th>
                     <th>Company</th>
                 </tr>
             </thead>
@@ -71,7 +78,7 @@
       paging: true,
       processing: true,
       serverSide: true,
-      ajax: '{{route('#')}}',
+      ajax: '{{route('json_attendance')}}',
       columns: [
         {"data": "id",
           render: function (data, type, row, meta) {
@@ -79,6 +86,17 @@
           }},
           { data: 'emp_no', name: 'emp_no' },
           { data: 'full_name', name: 'full_name' },
+          {data: 'jobtitle_code', name:'jobtitle_code'},
+          {data:'gender', name:'gender'},
+          {data:'attend_code', name:'attend_code'},
+          {data:'shiftstarttime', name:'shiftstarttime'},
+          {data:'shiftendtime', name:'shiftendtime'},
+          {data:'starttime', name:'endtime'},
+          {data:'actualworkmnt',name:'actualworkmnt'},
+          {data:'actualworkhour', name:'actualworkhour'},
+          {data:'cost_code', name:'cost_code'},
+          {data:'pos_name_en', name:'pos_name_en'},
+          {data:'company', name:'company'},
           { data: 'gender', name: 'gender' },
           { data: 'cost_code', name: 'cost_code' },
           { data: 'pos_name_en', name: 'pos_name_en' },
