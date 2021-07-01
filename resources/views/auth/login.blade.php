@@ -40,7 +40,7 @@
 		<div class="header-main">
 			<div class="main-icon">
 				
-			<img src="{{asset('login-template/mptrack.png')}}" alt="Man Power Tracking App">
+			<img height="100" width="200" src="{{asset('login-template/mptrack.png')}}" alt="Man Power Tracking App">
 			</div>
 			<div class="header-left-bottom">
                 <form method="POST" action="{{ route('login') }}">

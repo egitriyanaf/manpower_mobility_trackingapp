@@ -129,26 +129,37 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('employee')}}" class="nav-link {{ (request()->is('employee')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-table"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-database"></i>
               <p>
-                Master Employee
-                </p>
+                Master Data
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{route('teamleader')}}" class="nav-link {{ (request()->is('teamleader')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Master Teamleader
-                </p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('employee')}}" class="nav-link {{ (request()->is('employee')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Master Employee
+                    </p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="{{route('teamleader')}}" class="nav-link {{ (request()->is('teamleader')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Master Teamleader
+                    </p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item">
             <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
-              <i class="nav-icon fas fa-calendar-check"></i>
+              <i class="nav-icon fas fa-running"></i>
               <p>
                 Mobility Tracking
                 </p>
@@ -157,14 +168,14 @@
 
           
 
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+          <li class="nav-item">
+            <a href="{{route('attendance')}}" class="nav-link {{(request()->is('attendance')) ? 'active' : ''}}">
+              <i class="nav-icon fas fa-calendar-check"></i>
               <p>
-                Forms
+                Attendance
               </p>
             </a>
-          </li> --}}
+          </li>
 
         </ul>
       </nav>

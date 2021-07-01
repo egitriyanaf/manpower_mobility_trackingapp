@@ -45,6 +45,11 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('json',[App\Http\Controllers\TransactionController::class,'datajson_transaction_tracking'])->name('json_transaction_tracking');
     });
 
+    Route::prefix('/attendance')->group(function(){
+        Route::get('',[App\Http\Controllers\AttendanceController::class,'index'])->name('attendance');
+        Route::get('json',[App\Http\Controllers\AttendanceController::class, 'datajson_attendance'])->name('json_attendance');
+    });
+
     Route::get('/dashboard',[App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
 
     Route::prefix('/sync')->group(function(){
