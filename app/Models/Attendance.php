@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Attendance extends Model
-{
+{   protected $connection = "mysql";
     protected $table='attendances';
     protected $primarykey='id';
+    // protected $keytype='string';
+    // public $incrementing= false;
     protected $fillable=[
         'emp_no',
         'full_name',

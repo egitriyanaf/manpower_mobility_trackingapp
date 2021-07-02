@@ -16,7 +16,7 @@ class SyncronizeController extends Controller
 {
     public function syncEmployee(){
       //truncate all data employee
-      Master_employee::truncate();
+      // Master_employee::truncate();
              // Connect to live database
      $sunfish = DB::connection('sqlsrv');
      // Get table data from production
@@ -32,7 +32,7 @@ class SyncronizeController extends Controller
     
     public function syncTeamleader(){
       //truncate all data teamleader
-      Master_Teamleader::truncate();
+      // Master_Teamleader::truncate();
              // Connect to live database
      $sunfish = DB::connection('sqlsrv');
      // Get table data from production
@@ -46,13 +46,16 @@ class SyncronizeController extends Controller
     }
 
     public function syncAttendance(){
+      // Connect to live database
       $sunfish = DB::connection('sqlsrv');
-      //Get table data from production
-      foreach($sunfish->table('Manpowerapp_attendance')->get() as $data){
-        //save data to staging database - default db connection
-        $attendance=Attendance::firstOrCreate((array)$data);
+      foreach($sunfish->table('Manpowerapp_attendance')->get()as $data){
+        
+        // save data to staging database - default db connection
+        $attendance= Attendance::firstOrCreate((array)$data);
       }
+      // return alert success
       alert()->success('Syncronized Success!', 'Thank You');
-      return redirect()->back();
+      return redirect ()->back();
+
     }
 }

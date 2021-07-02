@@ -55,6 +55,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::prefix('/sync')->group(function(){
         Route::get('/employeeData',[App\Http\Controllers\SyncronizeController::class,'syncEmployee'])->name('syncemployee');
         Route::get('/supervisorData',[App\Http\Controllers\SyncronizeController::class,'syncTeamleader'])->name('syncteamleader');
+        Route::get('/attendanceData',[App\Http\Controllers\SyncronizeController::class,'syncAttendance'])->name('syncattendance');
     });
 });
 

@@ -26,7 +26,10 @@
           <h3 class="card-title">Attendance Table</h3>
 
           <div class="card-tools">
-            
+
+            <a href="{{route('syncattendance')}}" id="syncronize_attendance" class="btn btn-info"  title="Syncronize Attendance">
+              <i class="fas fa-sync"> Syncronize Data</i>
+            </a>
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
             </button>
@@ -44,16 +47,15 @@
                     <th>Name</th>
                     <th>Jobtitle</th>
                     <th>Gender</th>
-                    <th>Attend Code</th>
+                    <th>Cost Center</th>
+                    <th>Pos Name</th>
+                    <th>Company</th>
                     <th>Shift Start</th>
                     <th>Shift End</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th>Actual Work Minute</th>
-                    <th>Actual Work Hour</th>
-                    <th>Cost Center</th>
-                    <th>Pos Name</th>
-                    <th>Company</th>
+                    <th>Actual Work By Minute</th>
+                    <th>Actual Work By Hour</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,7 +74,7 @@
 
 <script type="text/javascript">
   $( function () {
-    var table_employee= $('#table_attendance').DataTable({
+    var table_attendance= $('#table_attendance').DataTable({
       "scrollY": 200,
       "scrollX": true,
       paging: true,
@@ -88,20 +90,15 @@
           { data: 'full_name', name: 'full_name' },
           {data: 'jobtitle_code', name:'jobtitle_code'},
           {data:'gender', name:'gender'},
-          {data:'attend_code', name:'attend_code'},
-          {data:'shiftstarttime', name:'shiftstarttime'},
-          {data:'shiftendtime', name:'shiftendtime'},
-          {data:'starttime', name:'endtime'},
-          {data:'actualworkmnt',name:'actualworkmnt'},
-          {data:'actualworkhour', name:'actualworkhour'},
           {data:'cost_code', name:'cost_code'},
           {data:'pos_name_en', name:'pos_name_en'},
           {data:'company', name:'company'},
-          { data: 'gender', name: 'gender' },
-          { data: 'cost_code', name: 'cost_code' },
-          { data: 'pos_name_en', name: 'pos_name_en' },
-          { data: 'jobtitle_code', name: 'jobtitle_code' },
-          { data: 'company_id', name: 'company_id' },
+          {data:'shiftstarttime', name:'shiftstarttime'},
+          {data:'shiftendtime', name:'shiftendtime'},
+          {data:'starttime', name:'starttime'},
+          {data:'endtime', name:'endtime'},
+          {data:'actualworkmnt',name:'actualworkmnt'},
+          {data:'actualworkhour', name:'actualworkhour'}
       ]
     });
 } );

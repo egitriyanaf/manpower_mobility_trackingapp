@@ -158,23 +158,34 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
-              <i class="nav-icon fas fa-running"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-sync"></i>
               <p>
                 Mobility Tracking
-                </p>
-            </a>
-          </li>
-
-          
-
-          <li class="nav-item">
-            <a href="{{route('attendance')}}" class="nav-link {{(request()->is('attendance')) ? 'active' : ''}}">
-              <i class="nav-icon fas fa-calendar-check"></i>
-              <p>
-                Attendance
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="{{route('attendance')}}" class="nav-link {{(request()->is('attendance')) ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-calendar-check"></i>
+                  <p>
+                    Attendance
+                  </p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-running"></i>
+                  <p>
+                    Rotation
+                    </p>
+                </a>
+              </li>
+    
+            </ul>
           </li>
 
         </ul>
