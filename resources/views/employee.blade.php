@@ -42,14 +42,14 @@
           <table id="table_employee" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Nik Emp</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Cost Center</th>
-                    <th>Pos Name</th>
-                    <th>Jobtitle Code</th>
-                    <th>Company</th>
+                    <th width="10px"><center>No.</center></th>
+                    <th width="50px"><center>Nik Emp</center></th>
+                    <th width="100px"><center>Name</center></th>
+                    <th width="10px"><center>Gender</center></th>
+                    <th width="100px"><center>Cost Center</center></th>
+                    <th width="100px"><center>Pos Name</center></th>
+                    <th width="10px"><center>Jobtitle Code</center></th>
+                    <th width="10px"><center>Company</center></th>
                 </tr>
             </thead>
             <tbody>
@@ -71,11 +71,12 @@
     var table_employee= $('#table_employee').DataTable({
       "scrollY": 200,
       "scrollX": true,
+      "displaystart":10,
       paging: true,
       processing: true,
       serverSide: true,
       ajax: '{{route('json_master_emp')}}',
-      columns: [
+      "columns": [
         {"data": "id",
           render: function (data, type, row, meta) {
               return meta.row + meta.settings._iDisplayStart + 1;
@@ -87,6 +88,9 @@
           { data: 'pos_name_en', name: 'pos_name_en' },
           { data: 'jobtitle_code', name: 'jobtitle_code' },
           { data: 'company_id', name: 'company_id' },
+      ],
+      "columnDefs": [
+          {"className": "dt-center", "targets": "_all"}
       ]
     });
 } );

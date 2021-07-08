@@ -37,14 +37,14 @@
                     <table id="table_transaction_tracking" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                           <tr>
-                              <th>No</th>
-                              <th>Nik Emp</th>
-                              <th>Nik Teamleader</th>
-                              <th>Cost Center</th>
-                              <th>Flag Check In</th>
-                              <th>Date Time Check In</th>
-                              <th>Flag Check Out</th>
-                              <th>Date Time Check Out</th>
+                              <th width="10px"><center>No</center></th>
+                              <th width="50px"><center>Nik Emp</center></th>
+                              <th width="50px"><center>Nik Teamleader</center></th>
+                              <th width="100px"><center>Cost Center</center></th>
+                              <th width="10px"><center>Flag Check In</center></th>
+                              <th width="100px"><center>Date Time Check In</center></th>
+                              <th width="10px"><center>Flag Check Out</center></th>
+                              <th width="100px"><center>Date Time Check Out</center></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -65,7 +65,7 @@
             processing: true,
             serverSide: true,
             ajax: '{{ route('json_transaction_tracking') }}',
-            columns: [
+            "columns": [
               {"data": "id",
               render: function (data, type, row, meta) {
                   return meta.row + meta.settings._iDisplayStart + 1;
@@ -77,7 +77,10 @@
               { data: 'datetime_checkin', name: 'datetime_checkin' },
               {data:'flag_checkout', name:'flag_checkout'},
               { data: 'datetime_checkout', name: 'datetime_checkout' }
-            ]
+            ],
+            "columnDefs": [
+            {"className": "dt-center", "targets": "_all"}
+          ]
           });
       } );
     </script>

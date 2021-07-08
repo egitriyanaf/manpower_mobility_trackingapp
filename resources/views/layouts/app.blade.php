@@ -130,9 +130,9 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+              <i class="nav-icon fas fa-sync"></i>
               <p>
-                Master Data
+                Syncronize Data
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -154,18 +154,6 @@
                     </p>
                 </a>
               </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-sync"></i>
-              <p>
-                Mobility Tracking
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
 
               <li class="nav-item">
                 <a href="{{route('attendance')}}" class="nav-link {{(request()->is('attendance')) ? 'active' : ''}}">
@@ -175,6 +163,20 @@
                   </p>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard-list"></i>
+              <p>
+                Mobility Tracking
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              
               
               <li class="nav-item">
                 <a href="{{route('transaction_tracking')}}" class="nav-link {{(request()->is('transaction_tracking')) ? 'active' : ''}}">
@@ -240,7 +242,8 @@
   var state = document.readyState
   if (state == 'interactive') {
        document.getElementById('contents').style.visibility="hidden";
-  } else if (state == 'complete') {
+  } 
+  else if (state == 'complete') {
       setTimeout(function(){
          document.getElementById('interactive');
          document.getElementById('loader').style.visibility="hidden";

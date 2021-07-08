@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         return view('user');
     }
@@ -23,6 +28,7 @@ class UserController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>Hash::make($request['password']),
+            'level'=>$request->level,
         ]);
         alert()->success('Create User Success!', 'Thank You');
         return redirect('user');

@@ -42,20 +42,20 @@
           <table id="table_attendance" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Nik Emp</th>
-                    <th>Name</th>
-                    <th>Jobtitle</th>
-                    <th>Gender</th>
-                    <th>Cost Center</th>
-                    <th>Pos Name</th>
-                    <th>Company</th>
-                    <th>Shift Start</th>
-                    <th>Shift End</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
-                    <th>Actual Work By Minute</th>
-                    <th>Actual Work By Hour</th>
+                    <th width="10px"><center>No.</center></th>
+                    <th width="50px"><center>Nik Emp</center></th>
+                    <th width="100px"><center>Name</center></th>
+                    <th width="10px"><center>Jobtitle</center></th>
+                    <th width="10px"><center>Gender</center></th>
+                    <th width="100px"><center>Cost Center</center></th>
+                    <th width="100px"><center>Pos Name</center></th>
+                    <th width="10px"><center>Company</center></th>
+                    <th width="50px"><center>Shift Start</center></th>
+                    <th width="50px"><center>Shift End</center></th>
+                    <th width="50px"><center>Start Time</center></th>
+                    <th width="50px"><center>End Time</center></th>
+                    <th width="10px"><center>Actual Work By Minute</center></th>
+                    <th width="10px"><center>Actual Work By Hour</center></th>
                 </tr>
             </thead>
             <tbody>
@@ -81,7 +81,7 @@
       processing: true,
       serverSide: true,
       ajax: '{{route('json_attendance')}}',
-      columns: [
+      "columns": [
         {"data": "id",
           render: function (data, type, row, meta) {
               return meta.row + meta.settings._iDisplayStart + 1;
@@ -99,7 +99,10 @@
           {data:'endtime', name:'endtime'},
           {data:'actualworkmnt',name:'actualworkmnt'},
           {data:'actualworkhour', name:'actualworkhour'}
-      ]
+      ],
+      "columnDefs": [
+      {"className": "dt-center", "targets": "_all"}
+          ]
     });
 } );
 </script>

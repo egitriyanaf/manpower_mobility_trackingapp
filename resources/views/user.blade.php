@@ -44,15 +44,24 @@
                   <div class="modal-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>
                     </div>
                     <div class="form-group">
                       <label for="email">Email address</label>
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
                     </div>
                     <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="level">Level</label>
+                      <select class="form-control" name="level" id="level" required>
+                        <option>--select--</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                      </select>
+
                     </div>
                   </div>
                   <div class="modal-footer border-top-0 d-flex justify-content-right">
@@ -80,9 +89,10 @@
           <table id="table_user" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Email</th>
+                    <th width="10px"><center>No</center></th>
+                    <th width="100px"><center>Name</center></th>
+                    <th width="100px"><center>Email</center></th>
+                    <th width="100px"><center>Level</center></th>
                 </tr>
             </thead>
             <tbody>
@@ -103,7 +113,11 @@
       var table_user = $('#table_user').DataTable({
         "scrollY": 200,
         "scrollX": true,
+        "displaystart":10,
         paging: true,
+        fixedColumns:   {
+            heightMatch: 'none'
+        },
 		    processing: true,
 		    serverSide: true,
         ajax: '{{ route('json_user') }}',
@@ -114,12 +128,16 @@
           }},
           { data: 'name', name: 'name' },
           { data: 'email', name: 'email' },
+          { data: 'level', name: 'level' },
 
           // {
           //       "mData": null,
           //       "bSortable": false,
           //      "mRender": function (o) { return '<a class="btn btn-danger btn-sm" href="{{ url('/user/delete_user/id') }}"><i class="fas fa-trash"></i></a>'; }
           //   }
+        ],
+      "columnDefs": [
+          {"className": "dt-center", "targets": "_all"}
         ]
       });
   } );
