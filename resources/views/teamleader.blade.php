@@ -63,7 +63,7 @@
     </section>
     <!-- /.content -->
   </div>
-
+  
   @push('scripts')
 
   <script type="text/javascript">
